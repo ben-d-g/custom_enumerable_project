@@ -63,6 +63,14 @@ module Enumerable
     return running_total
   end
 
+  def my_map
+    return_arr = []
+    0.upto(self.length - 1) do |index|
+      return_arr.push(yield(self[index]))
+    end
+    return return_arr
+  end
+
 end
 
 # You will first have to define my_each
