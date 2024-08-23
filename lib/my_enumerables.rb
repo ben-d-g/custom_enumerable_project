@@ -8,4 +8,13 @@ end
 # to this method
 class Array
   # Define my_each here
+
+  def my_each
+    if block_given?
+      0.upto(self.length - 1) do |index|
+        yield(self[index])
+      end
+    end
+    self
+  end
 end
