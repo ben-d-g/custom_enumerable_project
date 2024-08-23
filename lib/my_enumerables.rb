@@ -49,6 +49,20 @@ module Enumerable
     return true
   end
 
+  def my_count
+    running_total = 0
+    if block_given?
+      0.upto(self.length - 1) do |index|
+        if yield(self[index])
+          running_total += 1
+        end
+      end
+    else
+      running_total = self.length
+    end
+    return running_total
+  end
+
 end
 
 # You will first have to define my_each
