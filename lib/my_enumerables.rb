@@ -31,6 +31,24 @@ module Enumerable
     return true
   end
 
+  def my_any?
+    0.upto(self.length - 1) do |index|
+      if yield(self[index])
+        return true
+      end
+    end
+    return false
+  end
+
+  def my_none?
+    0.upto(self.length - 1) do |index|
+      if yield(self[index])
+        return false
+      end
+    end
+    return true
+  end
+
 end
 
 # You will first have to define my_each
