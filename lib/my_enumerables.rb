@@ -71,6 +71,13 @@ module Enumerable
     return return_arr
   end
 
+  def my_inject(start = self[0])
+    0.upto(self.length - 1) do |index|
+      start = yield(start, self[index])
+    end
+    return start
+  end
+
 end
 
 # You will first have to define my_each
