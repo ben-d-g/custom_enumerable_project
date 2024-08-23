@@ -22,6 +22,15 @@ module Enumerable
     return return_arr
   end
 
+  def my_all?
+    0.upto(self.length - 1) do |index|
+      unless yield(self[index])
+        return false
+      end
+    end
+    return true
+  end
+
 end
 
 # You will first have to define my_each
