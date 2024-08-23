@@ -1,5 +1,6 @@
 module Enumerable
   # Your code goes here
+
   def my_each_with_index
     if block_given?
       0.upto(self.length - 1) do |index|
@@ -8,6 +9,19 @@ module Enumerable
     end
     self
   end
+
+  def my_select
+    return_arr = []
+    if block_given?
+      0.upto(self.length - 1) do |index|
+        if yield(self[index])
+          return_arr.push(self[index])
+        end
+      end
+    end
+    return return_arr
+  end
+
 end
 
 # You will first have to define my_each
@@ -25,4 +39,5 @@ class Array
     end
     self
   end
+
 end
